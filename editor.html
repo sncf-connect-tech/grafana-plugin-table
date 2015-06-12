@@ -1,0 +1,52 @@
+<div class="editor-row">
+	<div class="section">
+		<h5>Table stat</h5>
+		<div class="editor-option">
+			<label class="small">Value</label>
+			<select class="input-small" ng-model="panel.valueName" ng-options="f for f in ['min','max','avg', 'current', 'total']" ng-change="render()"></select>
+		</div>
+	</div>
+	<div class="section">
+		<h5>Table format</h5>
+		<div class="editor-option">
+			<input class="input-small cr1" id="panel.isTranspose" type="checkbox"
+					ng-model="panel.isTranspose" ng-checked="panel.isTranspose" ng-change="render()">
+			<label class="small cr1" for="panel.isTranspose">Transpose</label>
+		</div>
+		<div class="editor-option">
+			<label class="small" for="panel.separator">Separator</label>
+			<input type="text" ng-model="panel.separator" placeholder="separator" ng-minlength="1" required class="input-mini tight-form-input" ng-blur="render()">
+			
+		</div>
+		<div class="editor-option">
+			<label class="small" for="panel.nbSplittedKeyInCol">Splitted alias in column</label>
+			<input class="input-small" id="panel.nbSplittedKeyInCol" type="number"
+					ng-model="panel.nbSplittedKeyInCol" min="1" required ng-change="render()">
+		</div>
+	</div>
+</div>
+<div class="editor-row">
+	<div class="section" style="margin-bottom: 20px">
+		<div class="tight-form">
+			<ul class="tight-form-list">
+				<li class="tight-form-item" style="width: 80px">
+					<strong>Maximum Table Axis</strong>
+				</li>
+				<li class="tight-form-item">
+					Rows&nbsp;
+					<input class="cr1" id="panel.maxRows" type="number" min="1"
+					ng-model="panel.maxRows" required ng-change="render()">
+					<label for="hideXAxis" class="cr1"></label>
+				</li>
+				<li class="tight-form-item last">
+					Colums&nbsp;
+					<input class="cr1" id="panel.maxCols" type="number" min="1"
+					ng-model="panel.maxCols" required ng-change="render()">
+					<label for="hideYAxis" class="cr1"></label>
+				</li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+
